@@ -1,0 +1,26 @@
+{
+  "name": "docker-api-test",
+  "version": "1.0.0",
+  "description": "Test API module for Docker",
+  "main": "server.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha ./test/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rorydonohue/docker-api-test.git"
+  },
+  "keywords": [],
+  "author": "Rory Donohue <rory.donohue@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/rorydonohue/docker-api-test#readme",
+  "dependencies": {
+    "config": "1.19.0",
+    "restify": "4.0.4"
+  },
+  "devDependencies": {
+    "mocha": "2.4.5",
+    "should": "8.3.0",
+    "supertest": "1.2.0"
+  }
+}

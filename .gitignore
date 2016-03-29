@@ -1,0 +1,10 @@
+bower_components
+node_modules
+.idea
+npm-debug.log
+*.scssc
+.sass-cache
+.DS_Store
+*.log
+local.json
+.env
