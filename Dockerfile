@@ -19,7 +19,8 @@ COPY    .       ${APP_DEST_DIR}
 
 # Set the workdir for commands that follow
 WORKDIR ${APP_DEST_DIR}
-RUN     npm install --production
+#RUN     npm install --production
+RUN     npm install
 
 # Add a non-privileged user for running the web app
 RUN     useradd ${APP_USER}
@@ -28,7 +29,7 @@ RUN     chown -R ${APP_USER} ${APP_DEST_DIR}
 EXPOSE  8000
 
 # Run the node server as a non-privileged user
-USER    ${APP_USER}
+#USER    ${APP_USER}
 
 # Default for the executing container
 CMD ["node", "server.js"]
