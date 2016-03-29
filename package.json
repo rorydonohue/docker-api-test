@@ -4,7 +4,8 @@
   "description": "Test API module for Docker",
   "main": "server.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha ./test/**"
+    "test": "NODE_ENV=test mocha ./test/**",
+    "ci-test": "NODE_ENV=test ./node_modules/istanbul/lib/cli.js cover _mocha test/* > test.tap &&  ./node_modules/istanbul/lib/cli.js report clover"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
     "restify": "4.0.4"
   },
   "devDependencies": {
+    "istanbul": "0.4.2",
     "mocha": "2.4.5",
     "should": "8.3.0",
     "supertest": "1.2.0"

@@ -8,3 +8,5 @@ npm-debug.log
 *.log
 local.json
 .env
+test.tap
+coverage
