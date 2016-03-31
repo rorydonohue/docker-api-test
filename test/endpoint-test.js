@@ -13,12 +13,24 @@ var client = restify.createJsonClient({
 describe('given a server', function() {
     var server = require('../server');
 
+    describe('When / is requested (GET)', function() {
+
+        it('responds with 200', function(done){
+            client
+                .get('/', function(e, req, res) {
+                    res.statusCode.should.equal(200);
+                    done();
+                });
+        });
+    });
+
+
     describe('When /hello/{name} is requested (GET)', function() {
 
         it('responds with 200', function(done){
             client
                 .get('/hello/george', function(e, req, res) {
-                    should.equal(res.statusCode, 200);
+                    res.statusCode.should.equal(200);
                     done();
                 });
         });
@@ -26,7 +38,7 @@ describe('given a server', function() {
         it('contains the requested name', function(done){
             client
                 .get('/hello/george', function(e, req, res) {
-                    should.equal(res.body, "\"hello george\"");
+                    res.body.should.equal("\"hello george\"");
                     done();
                 });
         });
@@ -37,7 +49,7 @@ describe('given a server', function() {
         it('responds with 204', function(done){
             client
                 .del('/hello/george', function(e, req, res) {
-                    should.equal(res.statusCode, 204);
+                    res.statusCode.should.equal(204);
                     done();
                 });
         });
@@ -48,7 +60,7 @@ describe('given a server', function() {
         it('responds with 201', function(done){
             client
                 .post('/hello', function(e, req, res) {
-                    should.equal(res.statusCode, 201);
+                    res.statusCode.should.equal(201);
                     done();
                 });
         });
@@ -56,8 +68,8 @@ describe('given a server', function() {
         it('responds with a username of 8 characters', function(done){
             client
                 .post('/hello', function(e, req, res) {
-                    should(res.body).be.type('string');
-                    should(res.body.length).equal(10);
+                    res.body.should.be.type('string');
+                    res.body.should.have.lengthOf(10);
                     done();
                 });
         });

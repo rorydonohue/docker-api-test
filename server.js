@@ -20,6 +20,11 @@ server.post('/hello', function create(req, res, next) {
 });
 server.put('/hello', send);
 server.get('/hello/:name', send);
+server.get('/', function(req, res, next) {
+    res.send(200);
+    return next()
+});
+
 server.head('/hello/:name', send);
 server.del('hello/:name', function rm(req, res, next) {
     res.send(204);
