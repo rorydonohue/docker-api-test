@@ -21,7 +21,7 @@ server.post('/hello', function create(req, res, next) {
 server.put('/hello', send);
 server.get('/hello/:name', send);
 server.get('/', function(req, res, next) {
-    res.send(200);
+    res.send(process.env.PROVIDER || 'PROVIDER not set');
     return next()
 });
 
