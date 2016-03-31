@@ -2,3 +2,4 @@
 
 With some simple tests.
 
+Testing private docker hub image.
