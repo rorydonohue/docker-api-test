@@ -21,7 +21,7 @@ server.post('/hello', function create(req, res, next) {
 server.put('/hello', send);
 server.get('/hello/:name', send);
 server.get('/', function(req, res, next) {
-    res.send("PROVIDER: " + process.env.PROVIDER);
+    res.send("ENV PROVIDER: " + process.env.PROVIDER);
     return next()
 });
 
